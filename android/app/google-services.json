@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "478473767129",
+    "project_id": "codetalksrestore",
+    "storage_bucket": "codetalksrestore.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478473767129:android:14237e70eafa98f32296c8",
+        "android_client_info": {
+          "package_name": "com.codetalksrestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478473767129-osokcgaojiqjeqchls1ltchv2l263kck.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codetalksrestore",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "478473767129-cd0feh5dpube8f46dqt25q3mnburahln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfRo2TZIiA6U-XqVj2R63Mgcli5keZPu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478473767129-cd0feh5dpube8f46dqt25q3mnburahln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
