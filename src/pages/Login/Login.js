@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import styles from './Login.style'
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
@@ -84,10 +84,12 @@ const Login = ({ navigation }) => {
                         <Input
                             placeHolder='enter your password...'
                             onChangeText={handleChange('password')}
-                            value={values.password} />
+                            value={values.password} 
+                            secureTextEntry={true}
+                            />
                         <Button
                             style={styles.button}
-                            theme='secondary'
+                            theme='primary'
                             text='login'
                             onPress={handleSubmit}
                             loading={loading}
@@ -98,7 +100,9 @@ const Login = ({ navigation }) => {
             <Button
                             theme='third'
                             text='sign in with google'
-                            onPress={onGoogleButtonPress} />
+                            onPress={onGoogleButtonPress}
+                            iconName='google'
+                             />
             <View style={styles.footer_container}>
                 <Text style={styles.footer_text} >Don't you have an account?</Text>
                 <TouchableOpacity onPress={gotoSignUp} >

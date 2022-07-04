@@ -5,6 +5,7 @@ import Welcome from './src/pages/Welcome/Welcome';
 import SignUp from './src/pages/SignUp/SignUp';
 import Login from './src/pages/Login/Login';
 import Rooms from './src/pages/Rooms/Rooms';
+import RoomDetail from './src/pages/RoomDetail/RoomDetail';
 import FlashMessage from "react-native-flash-message";
 import auth from '@react-native-firebase/auth'
 import { TouchableOpacity } from 'react-native';
@@ -47,17 +48,17 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         {!userSession ? (
-          <Stack.Screen options={{headerShown:false}} name='WelcomePage' component={Welcome} />
+          <Stack.Screen options={{ headerShown: false }} name='WelcomePage' component={Welcome} />
         ) : (
           <Stack.Screen options={{
-            title: `Welcome ${currentUser ? currentUser.email.split('@')[0] : ''}`,
+            title: `Welcome ${currentUser ? currentUser.email.split('@')[0].toLocaleUpperCase() : ''}`,
+            headerTitleStyle: 'orange',
+            headerTintColor: 'orange',
+            headerTitleStyle: { fontSize: 16 },
             headerRight: () =>
               <TouchableOpacity onPress={goSignOut} >
-                <Icon name='logout' size={30} color='black' />
+                <Icon name='logout' size={30} color='orange' />
               </TouchableOpacity>,
-            headerTitleStyle: 'black',
-            headerTintColor: 'black',
-            headerTitleStyle: { fontSize: 16 },
           }}
             name='RoomsPage'
             component={Rooms}
@@ -65,8 +66,16 @@ const App = () => {
 
         )
         }
-        <Stack.Screen  options={{headerShown:false}} name='SignUpPage' component={SignUp} />
-        <Stack.Screen options={{headerShown:false}}  name='LoginPage' component={Login} />
+        <Stack.Screen options={{ headerShown: false }} name='SignUpPage' component={SignUp} />
+        <Stack.Screen options={{ headerShown: false }} name='LoginPage' component={Login} />
+        <Stack.Screen options={{
+          title: `Welcome ${currentUser ? currentUser.email.split('@')[0].toLocaleUpperCase() : ''}`,
+          headerTitleStyle: 'orange',
+          headerTintColor: 'orange',
+          headerTitleStyle: { fontSize: 16 },
+        }}
+          name='RoomDetailPage'
+          component={RoomDetail} />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>

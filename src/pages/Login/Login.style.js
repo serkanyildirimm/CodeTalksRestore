@@ -40,6 +40,9 @@ const styles=StyleSheet.create({
      color:'white',
      textDecorationLine:'underline',
      fontWeight:'bold',
+    },
+    google_container:{
+        flexDirection:'row',
     }
 });
 

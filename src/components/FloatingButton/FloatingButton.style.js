@@ -13,6 +13,8 @@ const styles = StyleSheet.create({
         width: 60,
         borderRadius: 50,
         elevation: 8,
+        borderWidth:1,
+        borderColor:'white'
     }
 })
 

@@ -3,7 +3,7 @@ import { TextInput, View, TouchableOpacity, Text } from "react-native";
 import styles from "./ModalComponent.style";
 import Modal from 'react-native-modal';
 
-const ModalComponent = ({ visible,onClose,onCreate,placeholder,buttontext}) => {
+const ModalComponent = ({ visible,onClose,onCreate,placeholder,buttontext,theme,placeholderTextColor}) => {
     const [text, setText] = useState();
     
 
@@ -17,7 +17,7 @@ const ModalComponent = ({ visible,onClose,onCreate,placeholder,buttontext}) => {
 
     return ( 
         <Modal
-            style={styles.modal}
+            style={styles[theme].modal}
             swipeDirection='down'
             animationInTiming={800}
             animationOutTiming={800}
@@ -25,19 +25,20 @@ const ModalComponent = ({ visible,onClose,onCreate,placeholder,buttontext}) => {
             onSwipeComplete={onClose}
             onBackdropPress={onClose}
             onBackButtonPress={onClose} >
-            <View style={styles.container}>
+            <View style={styles[theme].container}>
                 <TextInput
-                    style={styles.input}
+                    style={styles[theme].input}
                     placeholder={placeholder}
+                    placeholderTextColor={placeholderTextColor}
                     onChangeText={setText}
                     value={text}
                     multiline
                 />
                 <TouchableOpacity
-                    style={styles.button}
+                    style={styles[theme].button}
                     onPress={handleCreate}
                 >
-                    <Text style={styles.button_text} >{buttontext}</Text>
+                    <Text style={styles[theme].button_text} >{buttontext}</Text>
                 </TouchableOpacity>
             </View>
         </Modal>

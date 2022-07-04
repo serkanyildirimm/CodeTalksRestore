@@ -72,7 +72,7 @@ const SignUp = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.user_container}>
-                <Icon name="user" color='white' size={140} />
+                <Icon name="user-secret" color='white' size={140} />
             </View>
             <Text style={styles.header_text}>Sign Up</Text>
             <Formik
@@ -88,15 +88,23 @@ const SignUp = ({ navigation }) => {
                         <Input
                             placeHolder='enter your password...'
                             onChangeText={handleChange('password')}
-                            value={values.password} />
+                            value={values.password} 
+                            secureTextEntry={true}
+                            />
                         <Input
                             placeHolder='enter your re password...'
                             onChangeText={handleChange('repassword')}
-                            value={values.repassword} />
+                            value={values.repassword} 
+                            secureTextEntry={true}
+                            />
                         <Button
                             theme='primary'
                             text='Sign Up'
                             onPress={handleSubmit} />
+                            <Button
+                            theme='secondary'
+                            text='back to login'
+                            onPress={backToLogin} />
                     </>
                 )}
             </Formik>

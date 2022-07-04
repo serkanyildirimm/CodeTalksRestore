@@ -2,7 +2,7 @@ import React from "react";
 import {View,Text,TextInput} from 'react-native'
 import styles from './Input.style'
 
-const Input = ({placeHolder,value,onChangeText}) => {
+const Input = ({placeHolder,value,onChangeText,secureTextEntry}) => {
     return(
         <View style={styles.container} >
             <TextInput 
@@ -11,7 +11,9 @@ const Input = ({placeHolder,value,onChangeText}) => {
             placeholderTextColor='white'
             onChangeText={onChangeText}
             value={value}
-            placeholder={placeHolder}/>
+            placeholder={placeHolder}
+            secureTextEntry={secureTextEntry}
+            />
         </View>
     )
 }
